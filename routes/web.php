@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/find-duplicate', 'App\Http\Controllers\PracticeController@findDuplicate');
+Route::get('/performed-categorization', 'App\Http\Controllers\PracticeController@CategorizeData');

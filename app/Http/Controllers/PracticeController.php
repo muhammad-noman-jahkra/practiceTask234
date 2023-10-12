@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\TestFourService;
 
 class PracticeController extends Controller
 {
@@ -22,5 +23,15 @@ class PracticeController extends Controller
         }
 
         dd($duplicateData);
+    }
+
+    public function CategorizeData(TestFourService $groupByOwnersService)
+    {
+        // Your code here
+        $data =["insurance.txt" => "Company A", "letter.docx" => "Company A", "Contract.docx" => "Company B"];
+
+        $result = $groupByOwnersService->performCategorization($data);
+
+        dd($result);
     }
 }
